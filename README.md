@@ -38,3 +38,6 @@ Results get saved to `results/sentiment_results.json` in the S3 bucket. Each rec
 ## Files
 - `src/pipeline.py` — main Lambda handler, reads tweets, calls Bedrock, saves results
 - `src/prompt.py` — builds the prompt sent to the LLM for each tweet
+
+## Challenges
+- I think the hardest part was figuring out why the pipeline kept failing when testing. It threw an error saying that the data must be greater than zero and it was pretty hard to debug. It took a couple of tries to figure out the issue, which was that I had uploaded the columns instead of the actual data.
